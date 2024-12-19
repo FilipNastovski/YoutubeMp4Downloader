@@ -1,0 +1,12 @@
+# Ignore the .venv directory
+.venv/
+
+# Ignore other files
+*.pyc
+*.pyo
+*.log
+*.env
+
+# Ignore IDE settings
+.vscode/
+.idea/
