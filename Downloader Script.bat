@@ -48,6 +48,10 @@ IF EXIST "requirements-videodownloader.txt" (
 :: clear the clutter
 call cls
 
+:: Ensure video_urls.txt exists and remove duplicates
+echo Checking and cleaning URLs in video_urls.txt...
+python CheckAndCleanUrls.py
+
 :: Ask user for script choice (mp4, mp3, or backup)
 echo Which script would you like to run?
 echo 1. MP4 Downloader (Download videos)
