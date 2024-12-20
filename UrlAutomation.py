@@ -10,9 +10,12 @@ def get_current_url_from_browser():
 
     # Simulate pressing CTRL + C to copy the URL
     pyautogui.hotkey('ctrl', 'c')
-    time.sleep(0.5)  # Wait for the clipboard to update
-
-    pyautogui.click(x=10, y=600)
+    time.sleep(0.2)  # Wait for the clipboard to update
+    pyautogui.write('Please wait: ')
+    pyautogui.write('# # # # # # # # # #', interval=0.025)
+    pyautogui.hotkey('ctrl', 'l')
+    pyautogui.press('clear')
+    pyautogui.write('URL copied, you can continue')  
     
     # Get the URL from the clipboard
     url = pyperclip.paste()
