@@ -33,7 +33,7 @@ def remove_duplicates_from_file(file_path):
             print(f"Removed {duplicates_removed} duplicate(s) from {file_path}.")
         else:
             print(f"No duplicates found in {file_path}.")
-        print(f"Links to be downloaded = {len(urls)}")
+        print(f"Links to be downloaded = {len(unique_urls)}")
     except Exception as e:
         print(f"An error occurred while cleaning duplicates: {e}")
 
