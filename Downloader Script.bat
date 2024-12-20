@@ -48,12 +48,13 @@ IF EXIST "requirements-videodownloader.txt" (
 :: clear the clutter
 call cls
 
-:: Ask user for script choice (mp4 or mp3)
+:: Ask user for script choice (mp4, mp3, or backup)
 echo Which script would you like to run?
 echo 1. MP4 Downloader (Download videos)
 echo 2. MP3 Downloader (Download music only)
+echo 3. Backup and Wipe URLs
 echo.
-set /p choice="Enter choice (1 or 2): "
+set /p choice="Enter choice (1, 2, or 3): "
 
 :: Run the appropriate script based on the user's input
 IF "%choice%"=="1" (
@@ -62,9 +63,13 @@ IF "%choice%"=="1" (
 ) ELSE IF "%choice%"=="2" (
     echo Running MP3 downloader...
     python Mp3Downloader.py
+) ELSE IF "%choice%"=="3" (
+    echo Running Backup and Wipe URLs script...
+    python BackupAndWipeUrls.py
 ) ELSE (
     echo Invalid choice.
 )
+
 
 :: Pause to keep the command window open
 :: pause

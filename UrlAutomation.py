@@ -19,7 +19,13 @@ def get_current_url_from_browser():
     
     # Get the URL from the clipboard
     url = pyperclip.paste()
-    return url
+    
+    # Check if the URL starts with the valid YouTube prefixes
+    if url.startswith("https://www.youtube") or url.startswith("http://www.youtube"):
+        return url
+    else:
+        print("The copied URL is not a valid YouTube URL.")
+        return None
 
 def save_url_to_file(url, filename="video_urls.txt"):
     # Save the URL to the file
@@ -32,8 +38,8 @@ def listen_for_hotkey():
     while True:
         if keyboard.is_pressed('alt+s'):
             print("Hotkey detected! Extracting URL...")
-            pyautogui.click(x=10, y=500)
-            # time.sleep(1)
+            # pyautogui.click(x=10, y=500)
+            time.sleep(0.5)
             url = get_current_url_from_browser()
             if url:
                 save_url_to_file(url)
