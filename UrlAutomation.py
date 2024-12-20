@@ -15,7 +15,7 @@ def get_current_url_from_browser():
     pyautogui.write('# # # # # # # # # #', interval=0.025)
     pyautogui.hotkey('ctrl', 'l')
     pyautogui.press('clear')
-    pyautogui.write('URL copied, you can continue')  
+    pyautogui.write('URL copied, you can continue.')  
     
     # Get the URL from the clipboard
     url = pyperclip.paste()
