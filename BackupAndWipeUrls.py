@@ -3,11 +3,17 @@ import shutil
 
 def create_backup_and_wipe():
     source_file = "video_urls.txt"
+    backup_dir = "Video URL Backups"
     
     # Check if the source file exists
     if not os.path.exists(source_file):
         print(f"The file '{source_file}' does not exist.")
         return
+
+    # Create the backup directory if it doesn't exist
+    if not os.path.exists(backup_dir):
+        os.makedirs(backup_dir)
+        print(f"Created backup directory: {backup_dir}")
 
     # Ask the user for the backup file name
     user_input = input("Enter a name for the backup file (without extension): ").strip()
@@ -16,10 +22,10 @@ def create_backup_and_wipe():
         return
     
     # Append the '_backup' postfix and add the .txt extension
-    backup_file = f"{user_input}_backup.txt"
+    backup_file = os.path.join(backup_dir, f"{user_input}_backup.txt")
 
     try:
-        # Copy the file
+        # Copy the file to the backup directory
         shutil.copy(source_file, backup_file)
         print(f"Backup created: {backup_file}")
         
