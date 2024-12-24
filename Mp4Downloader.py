@@ -29,9 +29,11 @@ def download_video(url, output_folder="downloads"):
 
     # Set yt-dlp options
     ydl_opts = {
-        'format': 'best[height<=480]',  # Download 480p or closest available resolution
+        # 'format': 'best[height<=480]',  # Download 480p or closest available resolution
+        'format': 'best[height<=720]',  # Download 720p or closest available resolution
         'outtmpl': f'{output_folder}/%(title)s.%(ext)s',  # Save videos in the specified folder
         'noplaylist': True,  # Download a single video, not a playlist
+        'filesize_limit': 20 * 1024 * 1024,  # 20 MB limit
     }
 
     try:

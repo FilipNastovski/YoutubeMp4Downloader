@@ -28,14 +28,14 @@ def download_audio(url, output_folder="downloads"):
     ydl_opts = {
         'format': 'bestaudio/best',  # Download the best available audio
         'postprocessors': [
-            {
-                'key': 'FFmpegExtractAudio',  # Extract audio after download
-                'preferredcodec': 'mp3',      # Convert to MP3
-                'preferredquality': '192',    # Audio quality (kbps)
-            }
-        ],
-        'outtmpl': f'{output_folder}/%(title)s.%(ext)s',  # Save the file in the specified folder
-        'noplaylist': True,  # Download a single video, not a playlist
+        {
+            'key': 'FFmpegExtractAudio',  # Convert the audio to MP3
+            'preferredcodec': 'mp3',
+            'preferredquality': '192',  # Adjust quality if needed
+        }
+],
+'merge_output_format': 'mp3',  # Ensure the file extension is correct
+
     }
 
     try:
