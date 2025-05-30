@@ -34,6 +34,10 @@ Before using this tool, ensure the following:
 
 ## How to Use
 
+### **Create Shortcuts**
+
+![Shortcuts Demo](https://i.imgur.com/Mkcps4C.gif)
+
 ### **Url Getter**
 This program collects YouTube video URLs. Here's how to use it:
 
