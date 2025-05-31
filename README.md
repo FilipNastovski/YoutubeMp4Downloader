@@ -51,7 +51,7 @@ This program collects YouTube video URLs. Here's how to use it:
 4. **Repeat for Multiple Videos**: Continue adding URLs by navigating to other videos and pressing the hotkey again.
 5. **Exit**: To stop the program, close the command prompt window.
 
-![UrlGetter Demo](https://i.imgur.com/AP8ENir.gif)
+![UrlGetter Demo](https://i.imgur.com/7S4xwDS.gif)
 
 **Notes**: 
 - Only URLs starting with `www.youtube.com` will be saved.
